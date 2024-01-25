@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="#" />
+    <title>Projektarbete grupp 20</title>
+</head>
+<body class="min-h-screen bg-gray-100 text-gray-800">
+    <header class="mt-10 text-center">
+        <h1 class="text-6xl font-bold text-blue-600 mb-4">Projektarbete grupp 20</h1>
+    </header>
+    <div class="text-center mb-10">
+        <h2 class="text-3xl font-semibold text-indigo-700">Bicycle Registration</h2>
+        <p class="text-xl mt-2 text-purple-600">Lägg till nya cyklar eller ändra befintliga poster</p>
+    </div>
+    <main class="flex flex-col items-center">
+        <div class="w-full max-w-4xl bg-white p-6 rounded-xl shadow-lg">
+            <form id="bicycleForm" class="grid grid-cols-2 gap-6">
+                <div class="form-control">
+                    <label for="model" class="block text-lg font-medium mb-2">Bicycle Model</label>
+                    <input class="w-full p-2 rounded-lg border-2 border-gray-300" type="text" name="model" placeholder="Mountain Bike" required />
+                </div>
+                <div class="form-control">
+                    <label for="manufacturer" class="block text-lg font-medium mb-2">Manufacturer</label>
+                    <input class="w-full p-2 rounded-lg border-2 border-gray-300" type="text" name="manufacturer" placeholder="Giant" required />
+                </div>
+                <div class="form-control">
+                    <label for="year" class="block text-lg font-medium mb-2">Year of Manufacture</label>
+                    <input class="w-full p-2 rounded-lg border-2 border-gray-300" type="text" name="year" placeholder="2023" required />
+                </div>
+                <div class="form-control">
+                    <label for="color" class="block text-lg font-medium mb-2">Color</label>
+                    <select class="w-full p-2 rounded-lg border-2 border-gray-300 bg-white" name="color">
+                        <option value="black">Black</option>
+                        <option value="blue">Blue</option>
+                        <option value="red">Red</option>
+                        <option value="green">Green</option>
+                        <option value="yellow">Yellow</option>
+                    </select>
+                </div>
+                <div class="mt-6 flex justify-end gap-4">
+                    <button class="px-5 py-2 border border-gray-300 rounded-md hover:bg-gray-200" type="reset" name="clearBicycleForm">
+                        Clear Form
+                    </button>
+                    <button class="px-5 py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-white" type="submit" name="submitBicycleForm">
+                        Submit
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div id="listContainer" class="mt-8 w-full max-w-4xl"></div>
+
+        
+
+        <div id="popup-modal" tabindex="-1"
+            class="hidden overflow-y-auto overflow-x-hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center">
+            <div class="relative p-4 w-full max-w-md max-h-full">
+                <div class="relative bg-white rounded-lg shadow">
+                    <button type="button"
+                        class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                        data-modal-hide="popup-modal">
+                    </button>
+                    <div class="p-4 md:p-5 text-center">
+                        <svg class="mx-auto mb-4 text-gray-400 w-12 h-12" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                        </svg>
+                        <h3 class="mb-5 text-lg font-normal text-gray-500">
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
